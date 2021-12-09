@@ -1,0 +1,833 @@
+@font-face {
+  font-family: 'TT Norms Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/TTNorms-Regular.woff');
+}
+@font-face {
+  font-family: 'TT Norms Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../fonts/TTNorms-Medium.woff');
+}
+@font-face {
+  font-family: 'TT Norms Bolt';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../fonts/TTNorms-Bold.woff');
+
+}
+@import "colors";
+@import "fonts";
+%color-gradient {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image:  linear-gradient(90.13deg, $light-pink 0.84%, $accent 99.96%);
+}
+%color-gradient-soft {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(90.13deg, $accent 0.84%, $light-pink 99.96%);
+}
+
+@mixin font-complete ($ff,$fst,$fw,$fs,$lh) {
+  font: {
+    family: $ff;
+    style: $fst;
+    weight: $fw;
+    size: $fs;
+  }
+  line-height: $lh;
+}
+@mixin fonts ($ff,$fst,$fw) {
+  font: {
+    family: $ff;
+    style: $fst;
+    weight: $fw;
+  }
+}
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+li:last-child {
+  margin: 0;
+}
+.content-header {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto 32px auto;
+}
+.block-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+}
+.photo-logo-header {
+  max-width: 100%;
+  height: auto;
+}
+.contacts-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.language-header {
+  font-family: TT Norms,sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.languages {
+  @include font-complete($fontBold,normal,700,12px,14px);
+  text-align: center;
+  letter-spacing: 1px;
+  color: #B3B3BA;
+  margin: 0;
+  text-decoration: none;
+  padding: 5px 6px 5px 6px;
+  border-radius: 8px;
+}
+.language-active {
+  padding: 5px 6px 5px 6px;
+  background-color: $accent;
+  border-radius: 8px;
+  color: $white;
+}
+.language-ru:hover {
+  background-color: $grey-bg-alt;
+  color: gray;
+}
+.language-en:hover {
+  background-color: $grey-bg-alt;
+  color: $grey-text;
+}
+.info-contacts-header {
+  display: flex;
+  align-items: center;
+}
+.text-address-header {
+  @include font-complete($fontRegular,normal,400,16px,19px);
+  color: $grey-text;
+  margin: 0 20px 0 0;
+  position: relative;
+}
+.text-address-header::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $grey-separator;
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: -15px;
+}
+.text-phone-header {
+  @include font-complete($fontBold,normal,700,16px,19px);
+  color: $grey-text;
+  margin: 0 26px 0 0;
+  position: relative;
+}
+.text-phone-header::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $grey-separator;
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: -11px;
+}
+.hamburger-mobile {
+  display: none;
+}
+.hamburger-block {
+  display: none;
+}
+.link-info-contacts-header {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  display: inline-block;
+}
+.link-info-contacts-header::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $grey-separator;
+  display: inline-block;
+  position: absolute;
+  top: 11px;
+  left: -14px;
+}
+.svg-path-facebook-header:hover {
+  fill: $active-regular;
+}
+.list-header {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.item-list-nav-header {
+  margin-right: 15px;
+}
+.item-list-nav-header-last {
+  margin: 0;
+}
+.link-item-list-nav-header {
+  @include font-complete($fontMedium,normal,500,18px,21px);
+  color: $active-regular;
+  text-decoration: none;
+}
+.link-item-list-nav-header-active {
+  border-bottom: 2px solid $accent;
+  color: $accent;
+}
+.link-item-list-nav-header:hover {
+  color: $accent;
+}
+.content-block-legal {
+  margin: 0 auto 100px auto;
+  background-color: $white;
+}
+.block-legal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.content-legal {
+  margin-right: 72px;
+  @include fonts($fontBold,normal,700);
+}
+.title-content-legal {
+  max-width: 641px;
+  width: 100%;
+  font-size: 42px;
+  line-height: 50px;
+  margin: 0 0 20px 0;
+  @extend %color-gradient-soft
+}
+.text-content-legal {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 30px;
+  color: $black;
+  margin: 0 0 30px 0;
+  max-width: 641px;
+  width: 100%;
+  text-align: left;
+}
+.text-content-legal-second {
+  margin: 0;
+}
+.block-info-legal {
+  border-left: 4px solid $grey-separator;
+  padding-left: 20px;
+}
+
+.first-info-legal {
+  margin-bottom: 40px;
+}
+.title-info-legal {
+  margin: 0 0 10px 0;
+  @include font-complete($fontBold,normal,700,36px,42px);
+  position: relative;
+  padding-left: 25px;
+  @extend %color-gradient-soft
+}
+.title-first-info-legal::before {
+  content: url("../image/flag.svg");
+  position: absolute;
+  top: 0;
+  left: -3px;
+}
+.title-first-info-legal::after {
+  content: "+";
+}
+.text-info-legal {
+  @include font-complete($fontRegular,normal,400,18px,21px);
+  color: $regular;
+  margin: 0;
+}
+.second-info-legal {
+  margin-bottom: 40px;
+}
+.title-second-info-legal {
+  padding-left: 30px;
+}
+.title-second-info-legal::before {
+  content: url("../image/bag.svg");
+  position: absolute;
+  top: 0;
+  left: -3px;
+}
+
+.title-info-legal::after {
+  content: "+";
+}
+.text-second-info-legal {
+  max-width: 391px;
+  width: 100%;
+}
+.third-info-legal {
+  margin: 0;
+}
+.title-info-legal {
+  padding-left: 30px;
+}
+.title-third-info-legal::before {
+  content: url("../image/star.svg");
+  position: absolute;
+  top: 5px;
+  left: -5px;
+}
+.block-team {
+  max-width: 1440px;
+  width: 100%;
+  min-height: 438px;
+  box-sizing: border-box;
+  background-image: url("../image/team.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $light-grey;
+  padding-top: 162px;
+  padding-bottom: 163px;
+  margin-bottom: 80px;
+
+}
+.title-block-team {
+  @include font-complete($fontBold,normal,700,96px,113px);
+  text-align: center;
+  letter-spacing: 63px;
+  text-transform: uppercase;
+  color: $white;
+  opacity: 0.8;
+  text-shadow: 0 15px 30px rgba(40, 40, 86, 0.8);
+  margin: 0 auto;
+}
+.block-history {
+  margin-bottom: 80px;
+  background-color: $white;
+}
+.content-history {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.block-text-content-history {
+  margin-right: 50px;
+}
+.text-content-history {
+  max-width: 641px;
+  width: 100%;
+  @include font-complete($fontRegular,normal,400,21px,30px);
+  color: $black;
+  margin: 0 0 20px 0;
+}
+.text-content-history-last {
+  margin: 0;
+}
+.title-content-history {
+  font-size: 42px;
+  line-height: 50px;
+  margin: 0;
+  max-width: 414px;
+  @extend %color-gradient-soft
+}
+.title-progress {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $regular;
+  max-width: 112px;
+  margin: 0 auto 55px auto;
+}
+.title-both-styles {
+  @include fonts($fontBold,normal,700);
+  width: 100%;
+}
+.progress {
+  padding-top: 28px;
+  padding-bottom: 32px;
+  border-bottom: 4px solid $grey-separator;
+  background-color: $grey-bg;
+}
+.info-progress {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 54px;
+}
+.block-picture-history {
+  max-width: 300px;
+  width: 100%;
+  min-height: 109px;
+  text-align: center;
+  padding-top: 25px;
+  border-radius: 12px;
+  background-color: $white;
+  box-sizing: border-box;
+}
+.block-picture-history-mobile {
+  display: none;
+}
+.swipe-blocks {
+  margin: 0 auto;
+  max-width: 108px;
+  width: 100%;
+  min-height: 16px;
+  display: flex;
+}
+.content-swipe-block {
+  width: 16px;
+  height: 16px;
+  margin-right: 30px;
+  background-color: $active-regular;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.content-swipe-block-active {
+  color: $active-regular;
+}
+.content-swipe-block-active:hover {
+  opacity: 0.6;
+}
+.second-swipe-block {
+  background: $active-regular;
+  opacity: 0.2;
+}
+.second-swipe-block:hover {
+  color: $active-regular;
+  opacity: 0.6;
+}
+.third-swipe-block {
+  background: $active-regular;
+  opacity: 0.2;
+  margin: 0;
+}
+.third-swipe-block:hover {
+  color: $active-regular;
+  opacity: 0.6;
+}
+.fourth-swipe-block {
+  display: none;
+}
+.fifth-swipe-block {
+  display: none;
+}
+.sixth-swipe-block {
+  display: none;
+}
+
+.block-footer {
+  padding-top: 30px;
+  background-color: $grey-bg;
+  padding-bottom: 40px;
+}
+.content-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.extra-top-footer {
+  align-items: center;
+}
+.info-content-footer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.text-info-content-footer {
+  @include font-complete($fontMedium,normal,500,16px,19px);
+  color: $regular;
+  margin: 0 47px 0 0;
+}
+.link-info-content-footer {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.links-footer {
+  @include fonts($fontBold,normal,700);
+  color: $active-regular;
+  text-decoration: none;
+  position: relative;
+}
+.link-info-content-footer:hover {
+  color: $accent;
+}
+.link-info-content-footer::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $grey-separator;
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -14px;
+}
+.text-content-footer {
+  @include font-complete($fontMedium,normal,500,16px,19px);
+  color: $grey-text;
+  margin: 0;
+}
+.contacts-footer {
+  display: flex;
+  align-items: center;
+
+}
+.link-contacts-footer-facebook {
+  margin-right: 17px;
+  text-decoration: none;
+}
+.photo-facebook-footer {
+  max-width: 100%;
+  height: auto;
+}
+.svg-facebook-footer:hover {
+  fill: $red;
+}
+.text-contacts-footer {
+  @include font-complete($fontBold,normal,700,16px,19px);
+  color: $alt;
+  margin: 0 26px 0 0;
+  position: relative;
+}
+.text-contacts-footer::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $grey-separator;
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: -10px;
+}
+.link-contacts-footer {
+  font-size: 16px;
+  line-height: 19px;
+}
+.link-contacts-footer::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $grey-separator;
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: -14px;
+}
+.link-contacts-footer:hover {
+  color: $accent;
+}
+@media all and (max-width: 375px){
+
+  .wrapper {
+    max-width: 375px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .content-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto 30px auto;
+  }
+  .text-address-header {
+    display: none;
+  }
+  .svg-facebook-header {
+    display: none;
+  }
+  .nav-header {
+    display: none;
+  }
+  .hamburger-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 335px;
+    width: 100%;
+  }
+  .hamburger-list {
+    display: block;
+  }
+  .hamburger-block {
+    display: none;
+    background-color: $menu-bg;
+    padding-top: 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .mobile-nav-open .hamburger-block {
+    display: block;
+  }
+  .hamburger-block::before {
+    content: url("../../image/small-p.svg");
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .hamburger-block::after {
+    content: url("../../image/close.svg");
+    position: absolute;
+    top: 2%;
+    right: 4%;
+  }
+  .nav-list-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .item-list-nav-hamburger {
+    margin-bottom: 27px;
+  }
+  .link-item-list-nav-hamburger {
+    @include font-complete($fontRegular,normal,400,24px,28px);
+    color: $active-regular;
+    text-decoration: none;
+  }
+  .link-item-list-nav-hamburger-active {
+    color: $accent;
+  }
+  .link-info-contacts-header {
+    display: none;
+  }
+  .text-phone-header {
+    margin: 0;
+  }
+  .text-phone-header::before {
+    display: none;
+  }
+  .link-logo-header {
+    display: none;
+  }
+  .link-logo-mobile-header {
+    display: block;
+    align-self: flex-end;
+  }
+  .block-header {
+    margin: 0 auto;
+  }
+  .extra-block-header {
+    max-width: 335px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .contacts-header {
+    margin: 0 auto 30px auto;
+    max-width: 335px;
+    width: 100%;
+    justify-content: space-between;
+
+  }
+  .content-block-legal {
+    margin: 0 auto 34px auto;
+  }
+  .block-legal {
+    flex-direction: column;
+  }
+  .content-legal {
+    margin: 0 auto 20px auto;
+    border-bottom: 4px solid $grey-separator;
+    padding-bottom: 20px;
+  }
+  .title-content-legal {
+    max-width: 335px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto 20px auto;
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .text-content-legal {
+    max-width: 335px;
+    width: 100%;
+    margin: 0 auto 30px auto;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .text-content-legal-second {
+    max-width: 335px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .block-info-legal {
+    border: none;
+    padding-left: 13px;
+  }
+  .block-team {
+    max-width: 375px;
+    width: 100%;
+    min-height: 290px;
+    box-sizing: border-box;
+    background-image: url("../image/team-mobile.jpg");
+    background-repeat: no-repeat;
+    padding-top: 124px;
+    padding-bottom: 124px;
+  }
+  .title-block-team {
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 20px;
+    max-width: 318px;
+    width: 100%;
+  }
+  .block-history {
+    margin: 0 auto 68px auto;
+  }
+  .content-history {
+    flex-direction: column;
+  }
+  .block-text-content-history {
+    margin: 0 auto 20px auto;
+  }
+  .text-content-history {
+    max-width: 334px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .title-content-history {
+    max-width: 334px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .block-picture-history {
+    display: none;
+  }
+  .block-picture-history-mobile {
+    display: inline;
+    background-color: $white;
+    max-width: 157px;
+    width: 100%;
+    min-height: 57px;
+    padding-top: 13px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+  .first-link-info-progress-mobile {
+    margin-right: 114px;
+  }
+  .fourth-swipe-block {
+    display: block;
+  }
+  .fifth-swipe-block {
+    display: block;
+  }
+  .sixth-swipe-block {
+    display: block;
+  }
+  .fourth-swipe-block {
+    background: $active-regular;
+    opacity: 0.2;
+  }
+  .fourth-swipe-block:hover {
+    color: $active-regular;
+    opacity: 0.6;
+  }
+  .fifth-swipe-block {
+    background: $active-regular;
+    opacity: 0.2;
+  }
+  .fifth-swipe-block:hover {
+    color: $active-regular;
+    opacity: 0.6;
+  }
+  .sixth-swipe-block {
+    background: $active-regular;
+    opacity: 0.2;
+  }
+  .sixth-swipe-block:hover {
+    color: $active-regular;
+    opacity: 0.6;
+  }
+  .content-swipe-block {
+    margin-right: 14px;
+  }
+  .swipe-blocks {
+    max-width: 180px;
+    width: 100%;
+  }
+  .block-footer {
+    padding-bottom: 118px;
+  }
+  .content-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-content-footer {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .link-info-content-footer {
+    margin-bottom: 20px;
+  }
+  .link-info-content-footer::before {
+    display: none;
+  }
+  .text-info-content-footer {
+    margin: 0 0 10px 0;
+  }
+  .contacts-footer {
+    flex-direction: column;
+  }
+  .link-contacts-footer-facebook {
+    margin: 0 auto 20px auto;
+  }
+  .text-contacts-footer {
+    margin: 0 0 20px 0;
+  }
+  .text-contacts-footer::before {
+    display: none;
+  }
+  .link-contacts-footer::before {
+    display: none;
+  }
+  .link-contacts-footer {
+    margin-bottom: 20px;
+  }
+
+}
+
